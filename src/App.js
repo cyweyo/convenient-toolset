@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import NavMenu from './Components/NavMenu'
+import ToolSet from './Components/ToolSet';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 function App() {
+  const [activeKey, setActiveKey] = useState(1);
+  const navigate = useNavigate();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 className="text-3xl font-bold underline flex justify-center my-8">
+        Convenient Tool Set
+      </h1>
+      <NavMenu activeKey={activeKey} setActiveKey={setActiveKey} navigate={navigate} />
+      <ToolSet />
+    </>
   );
 }
 
