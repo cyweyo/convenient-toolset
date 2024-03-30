@@ -38,8 +38,11 @@ export default function Calculator() {
       }
     }
     if (checkNumber.includes(e) && operator === "") {
-      if (firstInput.includes(".") || secondInput.includes(".")) {
-
+      if (firstInput.includes(".") && e === ".") {
+        return
+      }
+      if (secondInput.includes(".") && e === ".") {
+        return
       }
       setFirstInput(firstInput + e)
       console.log("firstInput", firstInput + e)
