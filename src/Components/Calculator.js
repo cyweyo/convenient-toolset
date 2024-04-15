@@ -14,14 +14,7 @@ export default function Calculator() {
   const [operator, setOperator] = useState("")
 
   const handleNumberClick = (e) => {
-    // 숫자 입력
-    // 숫자 연달아 입력하면 한 숫자로
-    // 연산 기호 들어오면 기억
-    // 다음 숫자 입력
-    // 숫자 연달아 입력하면 한 숫자로
-    // 연산 기호 들어오면 연산하고 second를 first로 교체
-    // equals 누르면 first와 second 연산
-    let checkNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "."];
+    let checkNumber = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "."];
     let checkOperator = ["plus", "minus", "multiply", "divide", "percentage"];
     if (e === "AC") {
       setFirstInput("")
@@ -38,6 +31,9 @@ export default function Calculator() {
       }
     }
     if (checkNumber.includes(e) && operator === "") {
+      if (firstInput === "" && e === 0) {
+        return
+      }
       if (firstInput.includes(".") && e === ".") {
         return
       }
@@ -45,15 +41,15 @@ export default function Calculator() {
         return
       }
       setFirstInput(firstInput + e)
-      console.log("firstInput", firstInput + e)
     }
     if (checkOperator.includes(e)) {
       setOperator(e)
-      console.log("operator", e)
     }
     if (checkNumber.includes(e) && operator !== "") {
+      if (secondInput === "" && e === 0) {
+        return
+      }
       setSecondInput(secondInput + e)
-      console.log("secondInputType", typeof secondInput + e)
     }
     if (e === "percentage") {
       setFirstInput(firstInput / 100)
