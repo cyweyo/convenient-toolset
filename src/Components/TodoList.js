@@ -38,7 +38,7 @@ export default function TodoList() {
                     <p className="ml-2" >{list}</p>
                     <button onClick={() => {
                       doneHandler(i)
-                    }} className="flex items-center justify-center ml-2 text-teal-300 border rounded-md px-1">
+                    }} className="flex items-center justify-center ml-2 text-teal-300 border rounded-md px-1 hover:bg-amber-300">
                       Done
                     </button>
                   </div>
@@ -55,7 +55,7 @@ export default function TodoList() {
             <input onChange={(e) => {
               setInput(e.target.value)
             }} placeholder="오늘 뭐 할 기누?" className="px-2 rounded-sm bg-teal-200" />
-            <button onClick={submitHandler} className="border rounded-md px-2 ml-2 text-amber-200">Submit</button>
+            <button onClick={submitHandler} className="border rounded-md px-2 ml-2 text-amber-200 hover:bg-teal-600">Submit</button>
           </div>
         </div>
       </div>
