@@ -17,7 +17,6 @@ export default function TodoList() {
     }
     copy.push(input)
     setSubmit(copy)
-    setInput("")
   }
 
   const doneHandler = (i) => {
