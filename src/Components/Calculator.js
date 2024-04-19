@@ -24,7 +24,6 @@ export default function Calculator() {
     if (e === "tab") {
       if (firstInput !== "" && operator === "") {
         setFirstInput(-firstInput)
-        console.log("firstInput", -firstInput)
       }
       if (secondInput !== "") {
         setSecondInput(-secondInput)
@@ -69,7 +68,7 @@ export default function Calculator() {
   }
 
   return (
-    <div className="flex flex-col w-96 border-2 border-slate-500 p-4 rounded-lg">
+    <div className="flex flex-col w-1/2 border-2 border-slate-500 p-4 rounded-lg">
       <div className="flex flex-col text-center">
         <input className="text-right placeholder:text-black border-2 h-6 border-slate-500 mb-4 pr-1"
           type="text"
@@ -79,51 +78,52 @@ export default function Calculator() {
               : firstInput
           } placeholder="0" readOnly />
         <div className="flex h-6 border-t-2 border-x-2 border-slate-500">
-          <button className="flex items-center justify-center w-1/4 border-r-2 border-slate-500"
+          <button className="flex items-center justify-center w-1/4 border-r-2 border-slate-500 hover:bg-orange-500"
             onClick={() => handleNumberClick("AC")}>AC</button>
-          <button className="flex items-center justify-center w-1/4 border-r-2 border-slate-500"
+          <button className="flex items-center justify-center w-1/4 border-r-2 border-slate-500 hover:bg-orange-500"
             onClick={() => handleNumberClick("tab")}><TbPlusMinus /></button>
-          <button className="flex items-center justify-center w-1/4 border-r-2 border-slate-500"
+          <button className="flex items-center justify-center w-1/4 border-r-2 border-slate-500 hover:bg-orange-500"
             onClick={() => handleNumberClick("percentage")}><FaPercentage /></button>
-          <button className="flex items-center justify-center w-1/4"
+          <button className="flex items-center justify-center w-1/4 hover:bg-orange-500"
             onClick={() => handleNumberClick("divide")}><FaDivide /></button>
         </div>
         <div className="flex border-t-2 border-x-2 border-slate-500">
-          <button className="w-1/4 border-r-2 border-slate-500"
+          <button className="w-1/4 border-r-2 border-slate-500 hover:bg-orange-500"
             onClick={() => handleNumberClick(7)}>7</button>
-          <button className="w-1/4 border-r-2 border-slate-500"
+          <button className="w-1/4 border-r-2 border-slate-500 hover:bg-orange-500"
             onClick={() => handleNumberClick(8)}>8</button>
-          <button className="w-1/4 border-r-2 border-slate-500"
+          <button className="w-1/4 border-r-2 border-slate-500 hover:bg-orange-500"
             onClick={() => handleNumberClick(9)}>9</button>
-          <button className="flex items-center justify-center w-1/4"
+          <button className="flex items-center justify-center w-1/4 hover:bg-orange-500"
             onClick={() => handleNumberClick("multiply")}><IoCloseSharp /></button>
         </div>
         <div className="flex border-t-2 border-x-2 border-slate-500">
-          <button className="w-1/4 border-r-2 border-slate-500"
+          <button className="w-1/4 border-r-2 border-slate-500 hover:bg-orange-500"
             onClick={() => handleNumberClick(4)}>4</button>
-          <button className="w-1/4 border-r-2 border-slate-500"
+          <button className="w-1/4 border-r-2 border-slate-500 hover:bg-orange-500"
             onClick={() => handleNumberClick(5)}>5</button>
-          <button className="w-1/4 border-r-2 border-slate-500"
+          <button className="w-1/4 border-r-2 border-slate-500 hover:bg-orange-500"
             onClick={() => handleNumberClick(6)}>6</button>
-          <button className="flex items-center justify-center w-1/4"
+          <button className="flex items-center justify-center w-1/4 hover:bg-orange-500"
             onClick={() => handleNumberClick("minus")}><FiMinus /></button>
         </div>
         <div className="flex border-t-2 border-x-2 border-slate-500">
-          <button className="w-1/4 border-r-2 border-slate-500"
+          <button className="w-1/4 border-r-2 border-slate-500 hover:bg-orange-500"
             onClick={() => handleNumberClick(1)}>1</button>
-          <button className="w-1/4 border-r-2 border-slate-500"
+          <button className="w-1/4 border-r-2 border-slate-500 hover:bg-orange-500"
             onClick={() => handleNumberClick(2)}>2</button>
-          <button className="w-1/4 border-r-2 border-slate-500"
+          <button className="w-1/4 border-r-2 border-slate-500 hover:bg-orange-500"
             onClick={() => handleNumberClick(3)}>3</button>
-          <button className="flex items-center justify-center w-1/4"
+          <button className="flex items-center justify-center w-1/4 hover:bg-orange-500"
             onClick={() => handleNumberClick("plus")}><FiPlus /></button>
         </div>
         <div className="flex border-t-2 border-x-2 border-b-2 border-slate-500">
-          <button className="w-1/2 border-r-2 border-slate-500"
+          <button className="w-1/2 border-r-2 border-slate-500 hover:bg-orange-500"
             onClick={() => handleNumberClick(0)}>0</button>
-          <button className="w-1/4 border-r-2 border-slate-500"
+          <button className="w-1/4 border-r-2 border-slate-500 hover:bg-orange-500"
             onClick={() => handleNumberClick(".")}>.</button>
-          <button className="flex items-center justify-center w-1/4" onClick={() => handleNumberClick("equals")}><FaEquals /></button>
+          <button className="flex items-center justify-center w-1/4 hover:bg-orange-500"
+            onClick={() => handleNumberClick("equals")}><FaEquals /></button>
         </div>
       </div>
     </div >

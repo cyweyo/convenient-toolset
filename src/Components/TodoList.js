@@ -1,9 +1,16 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export default function TodoList() {
   const todoList = ["오늘 할 일 이거임"]
   const [submit, setSubmit] = useState(todoList);
   const [input, setInput] = useState("");
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
 
   const submitHandler = () => {
     if (input === "") {
@@ -52,10 +59,10 @@ export default function TodoList() {
         </div>
         <div className="flex flex-col mt-10">
           <div className="flex justify-between border rounded-md p-1 bg-teal-600">
-            <input onChange={(e) => {
+            <input ref={inputRef} onChange={(e) => {
               setInput(e.target.value)
-            }} placeholder="오늘 뭐 할 기누?" className="px-2 rounded-sm bg-teal-200" />
-            <button onClick={submitHandler} className="border rounded-md px-2 ml-2 text-amber-200 hover:bg-teal-600">Submit</button>
+            }} placeholder="오늘 뭐 할 기누?" className="px-2 rounded-sm bg-teal-200 " />
+            <button onClick={submitHandler} className="border rounded-md px-2 ml-2 text-amber-200 hover:bg-orange-300">Submit</button>
           </div>
         </div>
       </div>
